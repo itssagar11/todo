@@ -5,17 +5,20 @@ class Todo extends React.Component{
             super()
             this.state={
                 ontype:"",
-                list:[]
+                list:Object.values(JSON.parse( localStorage.getItem('MyList')))
             }
                this.handleSubmit= this.handleSubmit.bind(this);
                this.handleEvent= this.handleEvent.bind(this);
                this.handleDel= this.handleDel.bind(this);
                this.handleEdit= this.handleEdit.bind(this);
                
+               
             
         }
+       
         handleSubmit(e){
             e.preventDefault();
+            
            // this.ontype= e.target.value;
           // console.log((this.ontype)=="")
            //if((this.ontype).length==0) return;
@@ -29,7 +32,9 @@ class Todo extends React.Component{
             console.log(this.state.list);
             this.setState({list:arr});
             this.setState({ontype:" "}) ;
+            localStorage.setItem('MyList', JSON.stringify(arr));
             document.getElementById("text").value="";
+            console.log(typeof Object.values(JSON.parse( localStorage.getItem('MyList'))))
         }
         handleEvent(e){
         this.setState({ontype:e.target.value}) ;
@@ -40,6 +45,7 @@ class Todo extends React.Component{
                 return e!==currele.id;
             })
             this.setState({list:c});
+            localStorage.setItem('MyList', JSON.stringify(c));
             console.log(e.val);
         }
         handleEdit(e){
@@ -49,8 +55,7 @@ class Todo extends React.Component{
                document.getElementById("text").value=this.state.ontype;
                
            });
-          
-       this. handleDel(e.id);
+          this.handleDel(e.id);
        //console.log(this.state.list)
 
           
