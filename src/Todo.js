@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 class Todo extends React.Component{
         constructor(){
@@ -67,44 +68,43 @@ class Todo extends React.Component{
     render(){
         return(
         <>
-        <div className="container">
-            <div className="logo">
-                <figure>
-                    <img src="" alt="" className=""/>
-                    <figcaption> My List</figcaption>
-                </figure>
-            </div>
+        <main>
+            
+        
+           
             <form>
             <div className="list-add">
                 <input type="text" id="text"
                         value={this.ontype}
-                        placeholder="✍️ Add new list"
+                        placeholder="✍️ Enter Task"
                         onChange={this.handleEvent}
+                        className="input"
                        
                  />
 
-                 <div className="AddButton" id="submit">
+               
                      <input type="submit"
-                            className="addButton"
-                            value="Add"
+                            className="addButton "
+                            value="Add Task"
                 
                             onClick={this.handleSubmit}
                     />
-                     
-                </div>     
+                 
             </div>
             </form>
+            <div className="container">
             <div className="list-name" id="list">
+                <i className="fa-solid fa-list-check"> My Task</i>
                 {(this.state.list).map(val =>(
                          <div className="list" key={val.id}>
-                         <span>  {val.val}</span> <span type="button"onClick={()=> this.handleEdit(val)}> Edit</span>  <span type="button" onClick={()=>this.handleDel(val.id)}> Delete</span>
+                         <span>  {val.val}</span> <span type="button" class="fa-solid fa-pen-to-square"onClick={()=> this.handleEdit(val)}></span>  <span type="button"  class="fa-solid fa-trash-can" onClick={()=>this.handleDel(val.id)}></span>
                      </div>
 
                 ))}
                
             </div>
         </div>  
-        
+        </main>
         
         
         

@@ -1,11 +1,69 @@
-body{
-
-    display: flex;
-    justify-content: center;
-    
+main{
+    margin: 10px 10px;
 
 }
 .container{
-    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    
+
+}
+.list-add{
+    display: block;
+}
+.list-name{
+    width:80%;
+    border-radius: 5px;
+    
+    padding: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+}
+.list{
+    position: relative;
+    width:100%;
+    
+    padding:5px;
+    box-sizing: border-box;
+}
+.fa-pen-to-square{
+    position:absolute;
+    right:25px;
+}
+.fa-trash-can{
+    position:absolute;
+    right:0;
+}
+form{
+    display: block;
+}
+form
+.input{
+    display: inline;
+    padding: 5px;
+    font-size: 16px;
+    height: 30px;
+    width: 70%;
+    
+    border:0;   
+    border-bottom: 1px solid black;
+}
+input{
+    display: inline-block;
+}
+.addButton{
+  margin-top: 6px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 7px;
+    font-size: 16px;
+    font-style: oblique;
+    width: auto;
+    display: block;
+}
+.addButton:hover{
+    color:white;
     background-color: black;
 }
